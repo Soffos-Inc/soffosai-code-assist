@@ -1,0 +1,32 @@
+{
+  "name": "soffosai-plugin",
+  "version": "0.0.1",
+  "description": "A VSCode Plugin that utilizes Soffos AI to generate described code requirement. It knows Soffos AI SDKs so it will help programmers create short, reusable, and maintainable code.",
+  "main": "app.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Soffos-Inc/soffosai-code-assist.git"
+  },
+  "keywords": [
+    "AI",
+    "Copilot",
+    "Soffos",
+    "Soffos",
+    "AI",
+    "coding",
+    "assistant",
+    "programmer",
+    "assistant",
+    "AI",
+    "integration"
+  ],
+  "author": "soffos ai, franco such",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Soffos-Inc/soffosai-code-assist/issues"
+  },
+  "homepage": "https://github.com/Soffos-Inc/soffosai-code-assist#readme"
+}
