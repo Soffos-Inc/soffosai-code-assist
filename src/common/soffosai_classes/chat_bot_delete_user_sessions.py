@@ -37,6 +37,9 @@ class ChatBotDeleteUserSessionsService(SoffosAIService):
         return super().__call__(user=user, chatbot_id=chatbot_id, user_id=user_id, session_ids=session_ids)
 
     def set_input_configs(self, name:str, chatbot_id:Union[str, InputConfig], user_id:Union[str, InputConfig], session_ids:Union[list, InputConfig]=None):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, chatbot_id=chatbot_id, user_id=user_id, session_ids=session_ids)
 
     @classmethod

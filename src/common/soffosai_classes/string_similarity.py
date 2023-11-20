@@ -51,6 +51,9 @@ class StringSimilarityService(SoffosAIService):
         return super().__call__(user=user, a=a, b=b)
 
     def set_input_configs(self, name:str, a:Union[str, InputConfig], b:Union[str, InputConfig]):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, a=a, b=b)
 
     @classmethod

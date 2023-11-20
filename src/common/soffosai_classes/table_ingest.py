@@ -37,6 +37,9 @@ class TableIngestService(SoffosAIService):
         return super().__call__(user=user, table=table, document_name=document_name, description=description)
 
     def set_input_configs(self, name:str, table:Union[list, InputConfig], document_name:Union[str, InputConfig], description:Union[str, InputConfig]):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, table=table, document_name=document_name, description=description)
 
     @classmethod

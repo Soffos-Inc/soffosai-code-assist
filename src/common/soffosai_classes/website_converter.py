@@ -43,6 +43,9 @@ class WebsiteConverterService(SoffosAIService):
         return super().__call__(user=user, url=url)
 
     def set_input_configs(self, name:str, url:Union[str, InputConfig]):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, url=url)
 
     @classmethod

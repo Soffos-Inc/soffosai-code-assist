@@ -44,6 +44,9 @@ class AudioConverterService(SoffosAIService):
         return super().__call__(user=user, file=file, url=url, model=model)
 
     def set_input_configs(self, name:str, file:Union[str, BufferedReader, InputConfig]=None, url:Union[str, InputConfig]=None, model:Union[str, InputConfig]=None):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, file=file, url=url, model=model)
 
     @classmethod

@@ -45,6 +45,9 @@ class SummarizationService(SoffosAIService):
         return super().__call__(user=user, text=text, sent_length=sent_length)
 
     def set_input_configs(self, name:str, text:Union[str, InputConfig], sent_length:Union[int, InputConfig]):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, text=text, sent_length=sent_length)
 
     @classmethod

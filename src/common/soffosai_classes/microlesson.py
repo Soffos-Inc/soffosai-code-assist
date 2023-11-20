@@ -43,6 +43,9 @@ class MicrolessonService(SoffosAIService):
         return super().__call__(user=user, content=content)
 
     def set_input_configs(self, name:str, content:Union[list, InputConfig]):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, content=content)
 
     @classmethod

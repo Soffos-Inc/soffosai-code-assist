@@ -34,6 +34,9 @@ class TableGetService(SoffosAIService):
         return super().__call__(user=user)
 
     def set_input_configs(self, name:str):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name)
 
     @classmethod

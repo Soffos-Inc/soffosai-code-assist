@@ -54,6 +54,9 @@ class QuestionAnsweringService(SoffosAIService):
         return super().__call__(user=user, question=question, document_text=document_text, document_ids=document_ids, check_ambiguity=check_ambiguity, check_query_type=check_query_type, generic_response=generic_response, meta=meta, message_id=message_id)
 
     def set_input_configs(self, name:str, question:Union[str, InputConfig], document_text:Union[str, InputConfig]=None, document_ids:Union[list, InputConfig]=None, check_ambiguity:Union[bool, InputConfig]=True, check_query_type:Union[bool, InputConfig]=True, generic_response:Union[bool, InputConfig]=None, meta:Union[dict, InputConfig]=None, message_id:Union[str, InputConfig]=None):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, question=question, document_text=document_text, document_ids=document_ids, check_ambiguity=check_ambiguity, check_query_type=check_query_type, generic_response=generic_response, meta=meta, message_id=message_id)
 
     @classmethod

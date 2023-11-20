@@ -44,6 +44,9 @@ class TableGeneratorService(SoffosAIService):
         return super().__call__(user=user, text=text, table_format=table_format, topic=topic)
 
     def set_input_configs(self, name:str, text:Union[str, InputConfig], table_format:Union[str, InputConfig], topic:Union[str, InputConfig]=None):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, text=text, table_format=table_format, topic=topic)
 
     @classmethod

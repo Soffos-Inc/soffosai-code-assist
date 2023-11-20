@@ -39,6 +39,9 @@ class TranslationService(SoffosAIService):
         return super().__call__(user=user, text=text, auto_detect=auto_detect, source_language_code=source_language_code, target_language_code=target_language_code)
 
     def set_input_configs(self, name:str, text:Union[str, InputConfig], auto_detect:Union[bool, InputConfig]=None, source_language_code:Union[str, InputConfig]=None, target_language_code:Union[str, InputConfig]=None):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, text=text, auto_detect=auto_detect, source_language_code=source_language_code, target_language_code=target_language_code)
 
     @classmethod

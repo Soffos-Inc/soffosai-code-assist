@@ -35,6 +35,9 @@ class TableDeleteService(SoffosAIService):
         return super().__call__(user=user, table_ids=table_ids)
 
     def set_input_configs(self, name:str, table_ids:Union[list, InputConfig]):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, table_ids=table_ids)
 
     @classmethod

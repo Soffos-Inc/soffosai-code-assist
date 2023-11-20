@@ -83,6 +83,9 @@ class NaturalSQLGenerationService(SoffosAIService):
         return super().__call__(user=user, query=query, messages=messages, tables=tables, notes=notes, classify_tables=classify_tables, table_prefix=table_prefix, table_aliases=table_aliases, boost=boost)
 
     def set_input_configs(self, name:str, query:Union[str, InputConfig]=None, messages:Union[list, InputConfig]=None, tables:Union[list, InputConfig]=None, notes:Union[list, InputConfig]=None, classify_tables:Union[bool, InputConfig]=None, table_prefix:Union[str, InputConfig]=None, table_aliases:Union[list, InputConfig]=None, boost:Union[bool, InputConfig]=True):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, query=query, messages=messages, tables=tables, notes=notes, classify_tables=classify_tables, table_prefix=table_prefix, table_aliases=table_aliases, boost=boost)
 
     @classmethod

@@ -67,6 +67,9 @@ class FileConverterService(SoffosAIService):
         return super().__call__(user=user, file=file, normalize=normalize)
 
     def set_input_configs(self, name:str, file:Union[str, BufferedReader, InputConfig], normalize:Union[str, InputConfig]):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, file=file, normalize=normalize)
 
     @classmethod

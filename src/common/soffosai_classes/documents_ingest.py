@@ -51,6 +51,9 @@ class DocumentsIngestService(SoffosAIService):
         return super().__call__(user=user, document_id=document_id, meta=meta, document_name=document_name, text=text, tagged_elements=tagged_elements)
 
     def set_input_configs(self, name:str, document_id:Union[str, InputConfig]=None, meta:Union[dict, InputConfig]=None, document_name:Union[str, InputConfig]=None, text:Union[str, InputConfig]=None, tagged_elements:Union[list, InputConfig]=None):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, document_id=document_id, meta=meta, document_name=document_name, text=text, tagged_elements=tagged_elements)
 
     @classmethod

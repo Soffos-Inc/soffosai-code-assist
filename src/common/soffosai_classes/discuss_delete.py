@@ -43,6 +43,9 @@ class DiscussDeleteService(SoffosAIService):
         return super().__call__(user=user, session_ids=session_ids)
 
     def set_input_configs(self, name:str, session_ids:Union[list, InputConfig]=None):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, session_ids=session_ids)
 
     @classmethod

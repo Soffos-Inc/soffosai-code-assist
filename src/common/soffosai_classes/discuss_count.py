@@ -52,6 +52,9 @@ class DiscussCountService(SoffosAIService):
         return super().__call__(user=user, return_messages=return_messages)
 
     def set_input_configs(self, name:str, return_messages:Union[bool, InputConfig]):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, return_messages=return_messages)
 
     @classmethod

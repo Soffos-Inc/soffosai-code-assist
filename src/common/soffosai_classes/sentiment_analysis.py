@@ -51,6 +51,9 @@ class SentimentAnalysisService(SoffosAIService):
         return super().__call__(user=user, text=text, sentence_split=sentence_split, sentence_overlap=sentence_overlap)
 
     def set_input_configs(self, name:str, text:Union[str, InputConfig], sentence_split:Union[int, InputConfig]=4, sentence_overlap:Union[bool, InputConfig]=None):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, text=text, sentence_split=sentence_split, sentence_overlap=sentence_overlap)
 
     @classmethod

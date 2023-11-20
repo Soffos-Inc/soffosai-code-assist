@@ -54,6 +54,9 @@ class AnswerScoringService(SoffosAIService):
         return super().__call__(user=user, context=context, question=question, user_answer=user_answer, answer=answer)
 
     def set_input_configs(self, name:str, context:Union[str, InputConfig], question:Union[str, InputConfig], user_answer:Union[str, InputConfig], answer:Union[str, InputConfig]=None):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, context=context, question=question, user_answer=user_answer, answer=answer)
 
     @classmethod
@@ -72,8 +75,21 @@ class AnswerScoringService(SoffosAIService):
         :param answer: Optionally provide the expected answer.
         :return: score: A value between 0 and 1 indicating the correctness of the answer.
         reasoning: A concise explanation of how the AI arrived to the predicted score.
-        :Examples
-        Detailed examples can be found at `Soffos Github Repository <https://github.com/Soffos-Inc/soffosai-python/tree/master/samples/services/answer_scoring.py>`_
+        :Example
+        import json
+        from soffosai import SoffosAIServices
+
+        soffosai.api_key = "<your Soffos API Key>"
+        service = SoffosAIServices.AnswerScoringService()
+        output = service(
+            user = "client_user_id",
+            context="Genetic evidence suggests that dogs descended directly from wolves (Canis) and that the now-extinct wolf lineages that produced dogs branched off from the line that produced modern living wolves sometime between 27,000 and 40,000 years ago. The timing and location of dog domestication is a matter of debate. There is strong genetic evidence, however, that the first domestication events occurred somewhere in northern Eurasia between 14,000 and 29,000 years ago.",
+            question="How long ago did dogs first become domesticated?",
+            user_answer="around 20,000 years ago.",
+            answer="Between 14,000 and 29,000 years ago."
+        )
+        print(json.dumps(output, indent=4))
+
         '''
         return super().call(user=user, context=context, question=question, user_answer=user_answer, answer=answer)
 

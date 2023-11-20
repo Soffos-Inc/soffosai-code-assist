@@ -47,6 +47,9 @@ class DocumentsSearchService(SoffosAIService):
         return super().__call__(user=user, query=query, document_ids=document_ids, top_n_keyword=top_n_keyword, top_n_natural_language=top_n_natural_language, filters=filters, date_from=date_from, date_until=date_until)
 
     def set_input_configs(self, name:str, query:Union[str, InputConfig]=None, document_ids:Union[list, InputConfig]=None, top_n_keyword:Union[int, InputConfig]=5, top_n_natural_language:Union[int, InputConfig]=5, filters:Union[dict, InputConfig]=None, date_from:Union[str, InputConfig]=None, date_until:Union[str, InputConfig]=None):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, query=query, document_ids=document_ids, top_n_keyword=top_n_keyword, top_n_natural_language=top_n_natural_language, filters=filters, date_from=date_from, date_until=date_until)
 
     @classmethod

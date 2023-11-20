@@ -44,6 +44,9 @@ class ChatBotCreateService(SoffosAIService):
         return super().__call__(user=user, role=role, chatbot_name=chatbot_name, chatbot_id=chatbot_id)
 
     def set_input_configs(self, name:str, role:Union[str, InputConfig], chatbot_name:Union[str, InputConfig], chatbot_id:Union[str, InputConfig]=None):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, role=role, chatbot_name=chatbot_name, chatbot_id=chatbot_id)
 
     @classmethod

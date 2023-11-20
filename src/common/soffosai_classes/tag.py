@@ -44,6 +44,9 @@ class TagService(SoffosAIService):
         return super().__call__(user=user, text=text, types=types, n=n)
 
     def set_input_configs(self, name:str, text:Union[str, InputConfig], types:Union[str, InputConfig]=None, n:Union[int, InputConfig]=None):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, text=text, types=types, n=n)
 
     @classmethod

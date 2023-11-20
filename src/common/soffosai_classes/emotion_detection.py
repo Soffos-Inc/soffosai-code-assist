@@ -51,6 +51,9 @@ class EmotionDetectionService(SoffosAIService):
         return super().__call__(user=user, text=text, sentence_split=sentence_split, sentence_overlap=sentence_overlap, emotion_choices=emotion_choices)
 
     def set_input_configs(self, name:str, text:Union[str, InputConfig], sentence_split:Union[int, InputConfig], sentence_overlap:Union[bool, InputConfig], emotion_choices:Union[str, InputConfig]=['joy', 'trust', 'fear', 'surprise', 'sadness', 'disgust', 'anger', 'anticipation']):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, text=text, sentence_split=sentence_split, sentence_overlap=sentence_overlap, emotion_choices=emotion_choices)
 
     @classmethod

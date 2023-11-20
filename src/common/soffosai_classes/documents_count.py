@@ -39,6 +39,9 @@ class DocumentsCountService(SoffosAIService):
         return super().__call__(user=user, filters=filters, date_from=date_from, date_until=date_until)
 
     def set_input_configs(self, name:str, filters:Union[dict, InputConfig]=None, date_from:Union[str, InputConfig]=None, date_until:Union[str, InputConfig]=None):
+        '''
+        Before using a SoffosAIService into a SoffosPipeline, you must setup the service's input configuration.
+        '''
         super().set_input_configs(name=name, filters=filters, date_from=date_from, date_until=date_until)
 
     @classmethod
